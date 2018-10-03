@@ -1,0 +1,24 @@
+<%
+  parent_class = ActiveRecord::Migration
+  parent_class = parent_class[parent_class.current_version] if Rails::VERSION::MAJOR >= 5
+-%>
+class CreateConsistencyCheckResults < <%= parent_class.to_s %>
+  def self.up
+    create_table :consistency_check_results do |t|
+      t.string :name
+      t.string :result
+      t.integer :violations, default: 0, null: false
+      <%- if Rails::VERSION::MAJOR >= 5 -%>
+      t.timestamps
+      <%- else -%>
+      t.timestamps null: false
+      <%- end -%>
+    end
+    add_index :consistency_check_results, [:name]
+    add_index :consistency_check_results, [:violations]
+  end
+
+  def self.down
+    drop_table :consistency_check_results
+  end
+end
