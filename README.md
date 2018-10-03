@@ -32,6 +32,23 @@ Write your own consistency check definitions into the file `jobs/consistency_che
 
     $ ConsistencyCheck.run_all
 
+Usage with ActiveAdmin:
+
+```
+ActiveAdmin.register ConsistencyCheckResult do
+  actions :index
+
+  action_item :run do
+    link_to 'Run all consistency checks', run_admin_consistency_check_results_path
+  end
+
+  collection_action :run do
+    ConsistencyCheck.run_all.map(&:save)
+    redirect_to admin_consistency_check_results_path
+  end
+end
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/mirelon/consistency_check.
