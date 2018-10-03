@@ -32,7 +32,7 @@ Write your own consistency check definitions into the file `jobs/consistency_che
 
     $ ConsistencyCheck.run_all
 
-Usage with ActiveAdmin:
+Usage with [ActiveAdmin](https://github.com/activeadmin/activeadmin)
 
 ```
 ActiveAdmin.register ConsistencyCheckResult do
