@@ -3,7 +3,7 @@ module ConsistencyCheck
     # If you want to perform check in a way depending on DB version:
     # POSTGRES_VERSION = ActiveRecord::Base.connection.select_value('SHOW server_version;')
 
-    def dummy_check
+    def self.dummy_check
       # Perform some check and return list of models that violate the consistency
       []
     end

@@ -3,7 +3,7 @@ require 'consistency_check/runner'
 
 module ConsistencyCheck
   def run_all
-    ConsistencyCheck::Definitions.methods(false ).map do |method|
+    ConsistencyCheck::Definitions.methods(false).map do |method|
       puts "Running #{method}..."
       violations = ConsistencyCheck::Definitions.send method
       max_shown_violations = 5
