@@ -1,5 +1,4 @@
 require 'consistency_check/version'
-require 'consistency_check/runner'
 
 module ConsistencyCheck
   def run_all
