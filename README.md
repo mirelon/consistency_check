@@ -51,6 +51,25 @@ end
 
 ## Contributing
 
+After making changes, do not forget to bump the version in `version.rb`. Then:
+```bash
+$ gem build consistency_check.gemspec
+Successfully built RubyGem
+Name: consistency_check
+Version: 0.3.0
+File: consistency_check-0.3.0.gem
+$ gem install consistency_check
+```
+When testing locally in a rails app, add this to `Gemfile`:
+```ruby
+gem 'consistency_check', path: '~/.rvm/gems/ruby-3.1.2@consistency_check/gems/consistency_check-0.3.0/'
+```
+When testing ends, run:
+```bash
+$ gem push consistency_check-0.3.0.gem
+```
+and remove `path` argument from rails app's Gemfile.
+
 Bug reports and pull requests are welcome on GitHub at https://github.com/mirelon/consistency_check.
 
 ## License
