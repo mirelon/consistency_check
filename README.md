@@ -1,3 +1,6 @@
+[![Gem Version](https://badge.fury.io/rb/consistency_check.svg)](https://badge.fury.io/rb/consistency_check)
+
+
 # ConsistencyCheck
 
 Run your own consistency checks and store results (time, name of the check, consisitency violations) in DB.
@@ -62,11 +65,11 @@ $ gem install consistency_check
 ```
 When testing locally in a rails app, add this to `Gemfile`:
 ```ruby
-gem 'consistency_check', path: '~/.rvm/gems/ruby-3.1.2@consistency_check/gems/consistency_check-0.3.0/'
+gem 'consistency_check', path: '~/.rvm/gems/ruby-3.4.1@consistency_check/gems/consistency_check-0.4.0/'
 ```
 When testing ends, run:
 ```bash
-$ gem push consistency_check-0.3.0.gem
+$ gem push consistency_check-0.4.0.gem
 ```
 and remove `path` argument from rails app's Gemfile.
 
